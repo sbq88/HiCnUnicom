@@ -4,7 +4,7 @@ on:
   push:
     branches: [ master ]
   schedule:
-    - cron: 30 04,23 * * ?
+    - cron: 32 23 * * * 
   watch:
     types: started
     
@@ -22,7 +22,7 @@ jobs:
            time=$(curl -s "http://quan.suning.com/getSysTime.do")
            echo -e "当前时间：\n${time}"
            
-        - name: Run 号码1
+        - name: Run 签到
           env:
            haoma: ${{ secrets.HAOMA }}
            mm: ${{ secrets.MM }}
